@@ -30,14 +30,14 @@ if [[ $(id -u) -ne 0  ]]; then
      exit 1;
 fi
 
-if [[ -d ramp-up-v1.0  ]]; then
+if [[ -d rampUp-v1.0  ]]; then
       echo "directorio existente"
 
 else
      git clone https://github.com/ElielBloemer/rampUp-v1.0.git
 fi
 
-cd ./ramp-up-v1.0/docker-compose/
+cd ./rampUp-v1.0/docker-compose/
 
 ip=$(curl -s ifconfig.me)
 

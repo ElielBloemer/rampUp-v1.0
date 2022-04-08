@@ -34,6 +34,7 @@ if [[ -d rampUp-v1.0  ]]; then
       echo "directorio existente"
 
 else
+     cd /home/ubuntu/
      git clone https://github.com/ElielBloemer/rampUp-v1.0.git
 fi
 

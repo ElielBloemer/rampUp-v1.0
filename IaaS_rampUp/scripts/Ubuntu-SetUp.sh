@@ -1,12 +1,5 @@
 #!/bin/bash
 
-#E_NOROOT="[!] debes ser root."
-
-#if [ $(id -u) -ne 0 ]; then
-#	echo -e "\n${E_NOROOT}\n"
-#	exit 1
-#fi
-
 sudo apt-get remove docker docker-engine docker.io containerd runc -y
 
 sudo apt-get update && sudo apt-get upgrade -y

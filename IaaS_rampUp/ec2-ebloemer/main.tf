@@ -6,7 +6,6 @@ resource "aws_instance" "ec2-ebloemer" {
   subnet_id = data.terraform_remote_state.vpc.outputs.public_subnet
   key_name = var.key_name
   vpc_security_group_ids = [aws_security_group.allow_ssh.id]
-  rampUp-v1.0/IaaS_rampUp/scripts
   user_data = file("./IaaS_rampUp/scripts/ubuntu-setUp.sh")
   tags = {
     Name = "VM-EBloemer"

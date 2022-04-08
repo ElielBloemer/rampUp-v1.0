@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+ movie-analyst-api:
+    image: ${IMAGE_API}  
+    environment:
+       - DB_HOST=${DB_HOST} 
+       - DB_USER=${DB_USER}
+       - DB_PASS=${DB_PASS}
+       - DB_NAME=${DB_NAME}
+    env_file:
+       - .env 
+    container_name: container-api
+    ports:
+            - "3000:3000"
+
+ movie-analyst-ui:
+   image: ${IMAGE_UI} 
+   environment:
+      - BACKEND_URL=${BACKEND_URL} 
+   container_name: container-ui
+   ports: 
+           - "80:8000"
+   depends_on:
+     - movie-analyst-api
+
+ 
